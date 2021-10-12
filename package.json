@@ -1,0 +1,10 @@
+{
+  "name": "alfred-whencord",
+  "version": "1.0.0",
+  "author": "HilbertGilbertson",
+  "homepage": "https://github.com/HilbertGilbertson/alfred-whencord",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
