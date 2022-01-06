@@ -11,31 +11,36 @@ Download the latest release [here][release].
 
 **Note:** Written for Alfred 4+. Requires nodeJS to be installed.
 
-### Install NodeJS (if you don't already have it)
+### Install NodeJS with Homebrew (if you don't already have it)
 
 If you don't already have nodeJS installed, you'll need it to use Whencord. This is because Whencord uses moment.js (the
 same package Discord itself uses). I originally wrote Whencord using a similar PHP package but the relative time and
 localisation was not a close enough match. I could then have written the whole thing in NodeJS of course, but then we'd
 miss out on PHP's wonderful string to time conversion.
 
-**TL;DR**: Install nodeJS. I'd generally recommend installing [Homebrew][homebrew]. Then it's as simple as opening the
+**TL;DR**: Install [Homebrew][homebrew]. Then it's as simple as opening the
 terminal and running:
 
 ```
 brew install nodejs
 ```
 
-**MacOS Monterey beta users:** Some stock packages have been removed from MacOS Monterey; this includes php. If you are
-using MacOS Monterey, I'd generally recommend installing [Homebrew][homebrew]. Then it's as simple
+**MacOS Monterey users:** Some stock packages have been removed from MacOS Monterey; this includes php. If you are using
+MacOS Monterey, after installing [Homebrew][homebrew], you can quickly and easily install PHP. It's as simple
 as: `brew install php`.
+
+**Automation permission**: When you first run Whencord, you may be prompted to allow Alfred to control Alfred. This 
+sounds a little confusing, but this is essentially a script within Whencord that wants to be able to modify Whencord's 
+own workflow config on the fly, ensuring you don't have to fiddle around with any configuration, automating it all for
+you. Please click **"OK"** and you won't be prompted for this again.
 
 Usage
 -----
 
 - `wc <datetime>` — Convert a human readable time ([PHP DateTime][datetime]) to a dynamic timestamp
 - `wc :<unix timestamp>`
-- `⌘t` — Quickly launch from Discord (Discord application must be the front most window)
-    - uses text selection within Discord (if text is selected)
+- [Hotkey](#hotkey) — Quickly launch from Discord (Discord application must be the front most window)
+  - uses text selection within Discord (if text is selected)
 
 Choose a time format from the resulting list. The dynamic timestamp is copied to your clipboard and pasted into the
 front most application in MacOS.
@@ -73,6 +78,20 @@ you first run Whencord. You should not need to configure anything, but these opt
 | `nodePath`      | This variable is auto-created to match the path to your nodejs binary, but can manually be set if you wish to use a different bin (e.g. `/usr/local/bin/node` or wherever you have it installed.) |
 | `localTimezone` | For local time, use a different [timezone][timezones] than your system clock. If left blank, your system timezone will be used automatically.                                                     |
 
+### Hotkey
+
+When you import an Alfred workflow, any hotkeys are stripped out and must be [reconfigured][workflow-import] by the end 
+user.
+
+Setting a hotkey for Whencord is not _required_, but it remains the recommended way to quickly trigger Whencord. Head to
+the workflow settings and set your chosen hotkey as shown in the image below.
+
+I recommend using **⌘T** (in Discord this hotkey 
+is already bound to the quick switcher, but you can still use ⌘K for the quick switcher, so by using ⌘T we're setting a
+quick and easy hotkey while not overriding anything important).
+
+<img src="https://raw.githubusercontent.com/HilbertGilbertson/alfred-whencord/master/hotkey.gif" width="406"/>
+
 License
 ----------------------
 
@@ -99,3 +118,4 @@ an Alfred workflow.
 [homebrew]: https://brew.sh
 [mjslocales]: https://github.com/moment/moment/tree/develop/locale
 [mjs]: https://github.com/moment/moment
+[workflow-import]: https://www.alfredapp.com/blog/tips-and-tricks/tutorial-importing-and-setting-up-alfred-workflows/

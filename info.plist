@@ -144,7 +144,7 @@
 				<string>Enter Date/Time</string>
 				<key>script</key>
 				<string>#!/bin/bash
-source ~/.bashrc
+eval "$(/opt/homebrew/bin/brew shellenv)"
 php whencord.php $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -239,8 +239,8 @@ php whencord.php $1</string>
 				<key>relatedApps</key>
 				<array>
 					<string>com.hnc.DiscordPTB</string>
-					<string>com.hnc.DiscordCanary</string>
 					<string>com.hnc.Discord</string>
+					<string>com.hnc.DiscordCanary</string>
 				</array>
 				<key>relatedAppsMode</key>
 				<integer>1</integer>
@@ -338,7 +338,9 @@ https://github.com/moment/moment/tree/develop/locale
 
 • nodePath
 
-This variable is auto-created to match the path to your nodejs binary, but can manually be set if you wish to use a different bin (e.g. /usr/local/bin/node or wherever you have it installed.)</string>
+This variable is auto-created to match the path to your nodejs binary, but can manually be set if you wish to use a different bin (e.g. /usr/local/bin/node or wherever you have it installed.)
+
+Also don't forget to set a quick hotkey (e.g. ⌘T) in the workflow settings!</string>
 	<key>uidata</key>
 	<dict>
 		<key>53722C46-90B6-495D-A353-C1BC0E186607</key>
@@ -404,7 +406,7 @@ This variable is auto-created to match the path to your nodejs binary, but can m
 		<string></string>
 	</dict>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/HilbertGilbertson/alfred-whencord</string>
 </dict>
