@@ -34,7 +34,7 @@ if (!$node) {
             listItem("NodeJS could not be located", "Please set the path to node in the workflow config.",
                 false, false),
             listItem("Installing NodeJS", null,
-                "https://github.com/HilbertGilbertson/alfred-whencord#install-nodejs-if-you-dont-already-have-it",
+                "https://github.com/HilbertGilbertson/alfred-whencord#install-nodejs-with-homebrew-if-you-dont-already-have-it",
                 true, "url", "url"),
             listItem("Configuring Whencord", null,
                 "https://github.com/HilbertGilbertson/alfred-whencord#configuration", true, "url",

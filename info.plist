@@ -144,7 +144,13 @@
 				<string>Enter Date/Time</string>
 				<key>script</key>
 				<string>#!/bin/bash
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+elif [ -f "/opt/local/bin/brew" ]; then
+    eval "$(/opt/local/bin/brew shellenv)"
+fi
 php whencord.php $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -406,7 +412,7 @@ Also don't forget to set a quick hotkey (e.g. ⌘T) in the workflow settings!</s
 		<string></string>
 	</dict>
 	<key>version</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/HilbertGilbertson/alfred-whencord</string>
 </dict>
